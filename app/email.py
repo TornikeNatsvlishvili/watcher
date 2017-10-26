@@ -1,10 +1,10 @@
 import yagmail
+from app.settings import EMAIL_TO, EMAIL_USERNAME
 
 USERNAME = 'tornikenatsvlishvilideveloper'
 yag = yagmail.SMTP(USERNAME)
 
 def send_new_magazine_mail(magazines, date):
-    global server
     to = 'tornikenatsvlishvili@gmail.com'
     subject = 'New magazines available!'
     magazines_str = magazines_to_str(magazines)

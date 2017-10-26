@@ -28,8 +28,7 @@ URLS = [
     ('http://magazinelib.com/?s=esquire+usa', MagazineTypes.ESQUIRE),
     ('http://magazinelib.com/?s=vanity+fair+usa', MagazineTypes.VANITY_FAIR),
     ('http://magazinelib.com/?s=Fashion+Magazine', MagazineTypes.FASHION_MAGAZINE),
-    ('http://magazinelib.com/?s=national+geographic+usa',
-     MagazineTypes.NATIONAL_GEOGRAPHIC),
+    ('http://magazinelib.com/?s=national+geographic+usa', MagazineTypes.NATIONAL_GEOGRAPHIC),
     ('http://magazinelib.com/?s=us+weekly', MagazineTypes.US_WEEKLY),
     ('http://magazinelib.com/?s=wired+usa', MagazineTypes.WIRED),
 ]
