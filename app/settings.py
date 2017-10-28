@@ -1,8 +1,6 @@
 import os
+import logging
 
-try:
-    EMAIL_TO = os.environ['WATCHER_EMAIL_TO']
-    EMAIL_USERNAME = os.environ['WATCHER_EMAIL_USERNAME']
-except Exception:
-    print('Set env vars')
-    os._exit(0)
+class Config:
+    EMAIL_TO = os.environ.get('WATCHER_EMAIL_TO')
+    EMAIL_USERNAME = os.environ.get('WATCHER_EMAIL_USERNAME')
