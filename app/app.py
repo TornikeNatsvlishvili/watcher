@@ -13,8 +13,7 @@ def loop():
     logging.info('started loop')
     email = Email()
     while not finished.is_set():
-        # start_date = datetime.now()
-        start_date = datetime(year=2017, month=10, day=26)
+        start_date = datetime.now()
         
         magazines = scan_urls(start_date)
         if len(magazines) > 0:
