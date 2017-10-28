@@ -10,6 +10,7 @@ finished = Event()
 SLEEP = 60 * 60  # every hour
 
 def loop():
+    logging.info('started loop')
     email = Email()
     while not finished.is_set():
         # start_date = datetime.now()
@@ -17,6 +18,7 @@ def loop():
         
         magazines = scan_urls(start_date)
         if len(magazines) > 0:
+            logging.info(f'found {len(magazines)} magazines, emailing')    
             email.send_new_magazine_mail(magazines, start_date)
         else:
             logging.info(f'No new magazines')
