@@ -18,6 +18,7 @@ class MagazineTypes(Enum):
     NATIONAL_GEOGRAPHIC = 'National Geographic'
     US_WEEKLY = 'Us Weekly'
     WIRED = 'Wired'
+    BAZAAR = 'Bazaar'
 
 
 URLS = [
@@ -31,4 +32,5 @@ URLS = [
     ('http://magazinelib.com/?s=national+geographic+usa', MagazineTypes.NATIONAL_GEOGRAPHIC),
     ('http://magazinelib.com/?s=us+weekly', MagazineTypes.US_WEEKLY),
     ('http://magazinelib.com/?s=wired+usa', MagazineTypes.WIRED),
+    ('http://magazinelib.com/?s=bazaar+usa', MagazineTypes.BAZAAR),
 ]
