@@ -19,6 +19,19 @@ class MagazineTypes(Enum):
     US_WEEKLY = 'Us Weekly'
     WIRED = 'Wired'
     BAZAAR = 'Bazaar'
+    YACHTS_INTERNATIONAL = 'Yachts International'
+    BOAT_INTERNATIONAL = 'Boat International'
+    FINWEEK = 'Finweek'
+    FORBES = 'Forbes'
+    HACKERCOOL = 'Hackercool'
+    MATHEMATICS_TODAY = 'Mathematics Today'
+    MAXIMUM_PC = 'Maximum PC'
+    NYLON = 'Nylon'
+    ARCHITECTURAL_DIGEST = 'Architectural Digest'
+    DWELL = 'Dwell'
+    HARVARD_BUSINESS_REVIEW = 'Harvard Business Review'
+    THE_SPECTATOR = 'The Spectator'
+    THE_NEW_YORKER = 'The New Yorker'
 
 
 URLS = [
@@ -29,8 +42,26 @@ URLS = [
     ('http://magazinelib.com/?s=esquire+usa', MagazineTypes.ESQUIRE),
     ('http://magazinelib.com/?s=vanity+fair+usa', MagazineTypes.VANITY_FAIR),
     ('http://magazinelib.com/?s=Fashion+Magazine', MagazineTypes.FASHION_MAGAZINE),
-    ('http://magazinelib.com/?s=national+geographic+usa', MagazineTypes.NATIONAL_GEOGRAPHIC),
+    ('http://magazinelib.com/?s=national+geographic+usa',
+     MagazineTypes.NATIONAL_GEOGRAPHIC),
     ('http://magazinelib.com/?s=us+weekly', MagazineTypes.US_WEEKLY),
     ('http://magazinelib.com/?s=wired+usa', MagazineTypes.WIRED),
     ('http://magazinelib.com/?s=bazaar+usa', MagazineTypes.BAZAAR),
+    ('http://magazinelib.com/?s=Yachts+International',
+     MagazineTypes.YACHTS_INTERNATIONAL),
+    ('http://magazinelib.com/?s=Boat+International',
+     MagazineTypes.BOAT_INTERNATIONAL),
+    ('http://magazinelib.com/?s=Finweek', MagazineTypes.FINWEEK),
+    ('http://magazinelib.com/?s=Forbes+USA', MagazineTypes.FORBES),
+    ('http://magazinelib.com/?s=Hackercool', MagazineTypes.HACKERCOOL),
+    ('http://magazinelib.com/?s=Mathematics+Today', MagazineTypes.MATHEMATICS_TODAY),
+    ('http://magazinelib.com/?s=Maximum+PC', MagazineTypes.MAXIMUM_PC),
+    ('http://magazinelib.com/?s=Nylon', MagazineTypes.NYLON),
+    ('http://magazinelib.com/?s=Architectural+Digest+USA',
+     MagazineTypes.ARCHITECTURAL_DIGEST),
+    ('http://magazinelib.com/?s=Dwell', MagazineTypes.DWELL),
+    ('http://magazinelib.com/?s=Harvard+Business+Review+USA',
+     MagazineTypes.HARVARD_BUSINESS_REVIEW),
+    ('http://magazinelib.com/?s=The+Spectator', MagazineTypes.THE_SPECTATOR),
+    ('http://magazinelib.com/?s=The+New+Yorker', MagazineTypes.THE_NEW_YORKER),
 ]

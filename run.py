@@ -43,7 +43,7 @@ def cli():
 @click.option('--debug', default=False, is_flag=True)
 @click.argument('email_to')
 @click.argument('email_username')
-def start(debug, email_to=None, email_username=None):
+def watch(debug, email_to=None, email_username=None):
     if email_to and email_username:
         Config.EMAIL_TO = email_to
         Config.EMAIL_USERNAME = email_username

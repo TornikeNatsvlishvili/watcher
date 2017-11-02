@@ -43,7 +43,7 @@ def scan_urls(start_date):
         res = find_articles_since(url, start_date)
         if res:
             magazines.append((res[0], res[1]))
-            logging.info(f'Done {res[0]}')
+            logging.info(f'Found {res[0]} for {name}')
 
         time.sleep(1)
 
