@@ -12,14 +12,15 @@ SLEEP = 24 * 60 * 60  # every 24 hours
 def loop():
     logging.info('started loop')
     email = Email()
+    next_start_date = datetime.now()
+    # next_start_date = datetime(year=2017, month=11, day=1)
     while not finished.is_set():
-        start_date = datetime.now()
-        # start_date = datetime(year=2017, month=10, day=29)
         
-        magazines = scan_urls(start_date)
+        magazines = scan_urls(next_start_date)
         if len(magazines) > 0:
             logging.info(f'found {len(magazines)} magazines, emailing')    
-            email.send_new_magazine_mail(magazines, start_date)
+            email.send_new_magazine_mail(magazines, next_start_date)
         else:
             logging.info(f'No new magazines')
         finished.wait(SLEEP)
+        next_start_date = datetime.now()
