@@ -1,4 +1,4 @@
-from app.constants import URLS, HEADERS
+from watcher.constants import URLS, HEADERS
 
 from bs4 import BeautifulSoup
 import requests

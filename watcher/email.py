@@ -1,5 +1,5 @@
 import yagmail
-from app.settings import Config
+from watcher.settings import Config
 
 class Email:
     def __init__(self):
