@@ -3,9 +3,10 @@ from watcher.email import Email
 from watcher.settings import Config
 from threading import Event
 import signal
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 import sys
+import json
 
 finished = Event()
 
@@ -30,6 +31,9 @@ def init_log():
                             filemode='w'
                             )
 
+def read_secrets():
+    with open('/run/secrets/secrets.json') as file:
+        return json.load(file)
 
 if __name__ == "__main__":
     init_log()
@@ -37,14 +41,15 @@ if __name__ == "__main__":
 
     logging.info('started loop')
 
+    Config.secrets = read_secrets()
     email = Email()
-    # next_start_date = datetime.now()
-    next_start_date = datetime(year=2017, month=11, day=1)
+
     while not finished.is_set():
-        magazines = scan_urls(next_start_date)
+        next_start_date = datetime.now() - timedelta(days=1)
+        magazines = scan_urls(next_start_date, stop_event=finished)
         if len(magazines) > 0:
             logging.info(f'found {len(magazines)} magazines, emailing')
             email.send_new_magazine_mail(magazines, next_start_date)
         else:
             logging.info('No new magazines')
-        finished.wait(Config.SLEEP)
+        finished.wait(Config.SLEEP_DAYS * 24 * 60 * 60)

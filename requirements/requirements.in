@@ -4,3 +4,4 @@ requests
 lxml
 yagmail
 keyring
+docker

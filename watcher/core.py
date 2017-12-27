@@ -1,5 +1,5 @@
 from watcher.constants import URLS, HEADERS
-
+from threading import Event
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -37,9 +37,13 @@ def find_articles_since(url: str, date):
 
     return None
 
-def scan_urls(start_date):
+
+def scan_urls(start_date, stop_event: Event=None):
     magazines = []
     for url, name in URLS:
+        if stop_event and stop_event.is_set():
+            break
+        
         res = find_articles_since(url, start_date)
         if res:
             magazines.append((res[0], res[1]))

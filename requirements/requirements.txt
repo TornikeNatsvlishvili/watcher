@@ -8,9 +8,13 @@ beautifulsoup4==4.6.0
 certifi==2017.7.27.1      # via requests
 chardet==3.0.4            # via requests
 click==6.7
+docker-pycreds==0.2.1     # via docker
+docker==2.7.0
 idna==2.6                 # via requests
 keyring==10.5.0
 lxml==4.1.0
 requests==2.18.4
+six==1.11.0               # via docker, docker-pycreds, websocket-client
 urllib3==1.22             # via requests
+websocket-client==0.45.0  # via docker
 yagmail==0.10.190

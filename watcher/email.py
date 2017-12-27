@@ -3,7 +3,9 @@ from watcher.settings import Config
 
 class Email:
     def __init__(self):
-        self.YAG = yagmail.SMTP(Config.EMAIL_USERNAME)
+        user = Config.secrets['email']['username']
+        password = Config.secrets['email']['pass']
+        self.YAG = yagmail.SMTP(user, password)
 
     def send_new_magazine_mail(self, magazines, date):
         subject = 'New magazines available!'
@@ -13,7 +15,7 @@ class Email:
         {magazines_str}\
         "
 
-        self.YAG.send(to=Config.EMAIL_TO, subject=subject, contents=body)
+        self.YAG.send(to=Config.secrets['email_to'], subject=subject, contents=body)
 
     def magazines_to_str(self, magazines):
         res = ""
