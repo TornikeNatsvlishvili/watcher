@@ -46,6 +46,7 @@ if __name__ == "__main__":
 
     while not finished.is_set():
         next_start_date = datetime.now() - timedelta(days=1)
+        print("Scanning for date: {}".format(next_start_date))
         magazines = scan_urls(next_start_date, stop_event=finished)
         if len(magazines) > 0:
             logging.info(f'found {len(magazines)} magazines, emailing')

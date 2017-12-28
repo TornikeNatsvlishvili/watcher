@@ -2,7 +2,7 @@ version: "3.1"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: 192.168.0.11:5000/watcher
+    image: localhost:5000/watcher
     secrets:
       - secrets.json
     deploy:
